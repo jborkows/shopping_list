@@ -1,0 +1,13 @@
+root = "."
+tmp_dir = "tmp"
+
+[build]
+cmd = "go build -o ./tmp/shopping ./cmd/shopping"
+bin = "tmp/shopping"
+delay = 200
+include_ext = ["go", "tpl", "html", "css", "js", "sql"]
+exclude_dir = ["tmp", "data", ".git"]
+
+[log]
+time = true
+

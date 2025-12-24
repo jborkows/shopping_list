@@ -1,0 +1,8 @@
+.air.toml.tmp
+/tmp/
+/bin/
+/data/
+*.db
+*.db-shm
+*.db-wal
+.env
