@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="indyk">
+  <defs>
+    <linearGradient id="turkey-feathers" x1="12" y1="14" x2="52" y2="58" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#b5885e"/>
+      <stop offset="1" stop-color="#7b4d2f"/>
+    </linearGradient>
+    <linearGradient id="turkey-body" x1="18" y1="22" x2="46" y2="54" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#caa07a"/>
+      <stop offset="1" stop-color="#8a5b3a"/>
+    </linearGradient>
+    <linearGradient id="turkey-beak" x1="30" y1="20" x2="36" y2="28" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffcc66"/>
+      <stop offset="1" stop-color="#e2a33e"/>
+    </linearGradient>
+  </defs>
+  <path d="M14 40c-2-14 8-26 20-26s22 12 20 26c-2 12-12 18-20 18S16 52 14 40z" fill="url(#turkey-feathers)" stroke="#2b2f3a" stroke-width="2"/>
+  <path d="M20 40c0-10 6-18 14-18s14 8 14 18c0 10-6 18-14 18S20 50 20 40z" fill="url(#turkey-body)" stroke="#2b2f3a" stroke-width="2"/>
+  <circle cx="28" cy="34" r="2.6" fill="#2b2f3a"/>
+  <circle cx="40" cy="34" r="2.6" fill="#2b2f3a"/>
+  <path d="M30 36l6 0" fill="none" stroke="#2b2f3a" stroke-width="2" stroke-linecap="round"/>
+  <path d="M32 36c2 2 2 4 0 6" fill="none" stroke="#d04a4a" stroke-width="3" stroke-linecap="round"/>
+  <path d="M31 27l6 3-6 3z" fill="url(#turkey-beak)" stroke="#2b2f3a" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M24 22c-3-2-6-2-9 0" fill="none" stroke="#2b2f3a" stroke-width="2" stroke-linecap="round"/>
+  <path d="M49 22c-3-2-6-2-9 0" fill="none" stroke="#2b2f3a" stroke-width="2" stroke-linecap="round"/>
+</svg>

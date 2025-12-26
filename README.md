@@ -62,7 +62,8 @@ make migrate-up
 ## Admin
 
 - `POST /admin/db/optimize` runs `PRAGMA optimize`
-- Requires `ADMIN_EMAILS` (comma-separated) unless `AUTH_DISABLED=1`
+- If OIDC token includes claim `admin=true`, admin access is granted.
+- Otherwise requires `ADMIN_EMAILS` (comma-separated) unless `AUTH_DISABLED=1`
 
 ## sqlc
 

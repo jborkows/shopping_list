@@ -1,3 +1,0 @@
-DROP VIEW IF EXISTS v_products;
-DROP VIEW IF EXISTS v_groups;
-

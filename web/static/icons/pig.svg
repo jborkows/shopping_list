@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="świnia">
+  <defs>
+    <linearGradient id="pig-body" x1="10" y1="16" x2="54" y2="54" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffd0dc"/>
+      <stop offset="1" stop-color="#f1a9bb"/>
+    </linearGradient>
+    <linearGradient id="pig-snout" x1="22" y1="34" x2="42" y2="56" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffb2c5"/>
+      <stop offset="1" stop-color="#e4889f"/>
+    </linearGradient>
+  </defs>
+  <path d="M12 30c0-10 9-18 20-18s20 8 20 18v10c0 10-9 18-20 18S12 50 12 40V30z" fill="url(#pig-body)" stroke="#2b2f3a" stroke-width="2"/>
+  <path d="M18 18l-6-4 2 10c2-2 3-3 4-6z" fill="#f1a9bb" stroke="#2b2f3a" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M46 18l6-4-2 10c-2-2-3-3-4-6z" fill="#f1a9bb" stroke="#2b2f3a" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="24" cy="30" r="3" fill="#2b2f3a"/>
+  <circle cx="40" cy="30" r="3" fill="#2b2f3a"/>
+  <path d="M22 38c0-5 5-8 10-8s10 3 10 8v6c0 6-6 10-10 10s-10-4-10-10v-6z" fill="url(#pig-snout)" stroke="#2b2f3a" stroke-width="2"/>
+  <ellipse cx="28" cy="42" rx="3" ry="4" fill="#2b2f3a" opacity="0.9"/>
+  <ellipse cx="36" cy="42" rx="3" ry="4" fill="#2b2f3a" opacity="0.9"/>
+  <path d="M30 48c2 2 4 2 6 0" fill="none" stroke="#2b2f3a" stroke-width="2" stroke-linecap="round"/>
+  <path d="M50 42c4 2 6 6 3 9" fill="none" stroke="#2b2f3a" stroke-width="2" stroke-linecap="round"/>
+</svg>

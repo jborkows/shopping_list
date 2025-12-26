@@ -19,6 +19,7 @@ type User struct {
 	Subject string
 	Email   string
 	Name    string
+	Admin   bool
 }
 
 type Authenticator interface {
@@ -187,10 +188,14 @@ func (a *oidcAuth) HandleCallback(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	var rawClaims map[string]any
+	_ = idToken.Claims(&rawClaims)
+	admin := extractAdminFromClaims(rawClaims)
+
 	sid, _ := randToken(32)
 	a.sessionsMu.Lock()
 	a.sessions[sid] = session{
-		user:      User{Subject: claims.Subject, Email: claims.Email, Name: claims.Name},
+		user:      User{Subject: claims.Subject, Email: claims.Email, Name: claims.Name, Admin: admin},
 		expiresAt: time.Now().Add(24 * time.Hour),
 	}
 	a.sessionsMu.Unlock()
@@ -285,4 +290,27 @@ func isSecureRequest(r *http.Request) bool {
 		return true
 	}
 	return strings.EqualFold(r.Header.Get("X-Forwarded-Proto"), "https")
+}
+
+func extractAdminFromClaims(claims map[string]any) bool {
+	if claims == nil {
+		return false
+	}
+	if v, ok := claims["admin"]; ok {
+		return anyToBool(v)
+	}
+	return false
+}
+
+func anyToBool(v any) bool {
+	switch vv := v.(type) {
+	case bool:
+		return vv
+	case string:
+		return strings.EqualFold(strings.TrimSpace(vv), "true")
+	case float64:
+		return vv != 0
+	default:
+		return false
+	}
 }

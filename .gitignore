@@ -1,4 +1,7 @@
 .air.toml.tmp
+/.cache/
+/.gocache/
+/.gomodcache/
 /tmp/
 /bin/
 /data/

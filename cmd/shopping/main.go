@@ -12,6 +12,7 @@ import (
 
 	"shopping/internal/domain/admin"
 	"shopping/internal/domain/products"
+	"shopping/internal/domain/shoppinglist"
 	"shopping/internal/infrastructure/config"
 	"shopping/internal/infrastructure/logging"
 	"shopping/internal/infrastructure/oidc"
@@ -43,13 +44,15 @@ func main() {
 	var productsQueries products.Queries = repo
 	productsService := products.NewService(repo)
 	var adminMaintenance admin.Maintenance = repo
+	var shoppingRepo shoppinglist.Repository = repo
+	shoppingService := shoppinglist.NewService(shoppingRepo)
 
 	authenticator, err := oidc.New(cfg)
 	if err != nil {
 		log.Fatalf("auth: %v", err)
 	}
 
-	srv := web.NewServer(cfg, productsQueries, productsService, adminMaintenance, authenticator)
+	srv := web.NewServer(cfg, productsQueries, productsService, shoppingService, adminMaintenance, authenticator)
 
 	httpServer := &http.Server{
 		Addr:              cfg.Addr,

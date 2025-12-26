@@ -16,6 +16,7 @@ func Up(db *sql.DB) error {
 	if err != nil {
 		return err
 	}
+	defer func() { _ = src.Close() }()
 
 	driver, err := sqlite3.WithInstance(db, &sqlite3.Config{})
 	if err != nil {
@@ -26,7 +27,6 @@ func Up(db *sql.DB) error {
 	if err != nil {
 		return err
 	}
-	defer func() { _, _ = m.Close() }()
 
 	if err := m.Up(); err != nil && !errors.Is(err, migrate.ErrNoChange) {
 		return err

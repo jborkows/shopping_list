@@ -47,4 +47,4 @@
 ## Security & Configuration Tips
 
 - Never commit secrets; `.env` is ignored. Rotate OIDC secrets if exposed.
-- Admin endpoints require `ADMIN_EMAILS` (unless `AUTH_DISABLED=1`).
+- Admin endpoints require OIDC claim `admin=true` or `ADMIN_EMAILS` (unless `AUTH_DISABLED=1`).

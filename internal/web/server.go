@@ -5,6 +5,7 @@ import (
 
 	"shopping/internal/domain/admin"
 	"shopping/internal/domain/products"
+	"shopping/internal/domain/shoppinglist"
 	"shopping/internal/infrastructure/config"
 	"shopping/internal/infrastructure/oidc"
 )
@@ -13,16 +14,20 @@ type Server struct {
 	cfg      config.Config
 	auth     oidc.Authenticator
 	products productsComponent
+	shopping shoppingComponent
 	admin    adminComponent
 }
 
-func NewServer(cfg config.Config, qry products.Queries, svc *products.Service, adminMaintenance admin.Maintenance, authenticator oidc.Authenticator) *Server {
+func NewServer(cfg config.Config, qry products.Queries, svc *products.Service, shoppingSvc *shoppinglist.Service, adminMaintenance admin.Maintenance, authenticator oidc.Authenticator) *Server {
 	return &Server{
 		cfg:  cfg,
 		auth: authenticator,
 		products: productsComponent{
 			qry: qry,
 			svc: svc,
+		},
+		shopping: shoppingComponent{
+			svc: shoppingSvc,
 		},
 		admin: adminComponent{
 			maintenance: adminMaintenance,
